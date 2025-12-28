@@ -21,3 +21,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
     vim.keymap.set("n", "<leader>t", ":w<cr>:RustTest .<cr>")
   end,
 })
+
+vim.api.nvim_create_autocmd("BufEnter", {
+  pattern = "*.lua",
+  callback = function()
+    vim.keymap.set("n", "<leader>r", ":w<cr>:source<cr>")
+  end,
+})
